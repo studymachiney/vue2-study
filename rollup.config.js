@@ -1,5 +1,6 @@
 import babel from 'rollup-plugin-babel'
 import  resolve  from '@rollup/plugin-node-resolve'
+import cleanup from 'rollup-plugin-cleanup'
 export default {
     input: './src/index.js', // 入口
     output: {
@@ -12,6 +13,7 @@ export default {
         babel({
             exclude: 'node_modules/**' // 排除node_modules下的所有文件
         }),
+        cleanup(),
         resolve()
     ]
 }
