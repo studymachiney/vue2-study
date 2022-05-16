@@ -7,12 +7,16 @@
         <title>Document</title>
     </head>
     <body>
-        <div id="app">
-            <div style="color: red">{{name}} hello</div>
+        <div id="app" style="color: red; background-color: aliceblue">
+            <div style="color: red">{{name}} hello {{age}} {{hobby}}</div>
             <br />
+            <hr />
+            <input type="text" />
+            <img src="" alt="" />
             <span>{{age}}</span>
         </div>
-        <script src="./vue.js"></script>
+
+        <script src="../dist/vue.js"></script>
         <script>
             const vm = new Vue({
                 data() {
@@ -23,12 +27,22 @@
                             num: 40,
                             content: '白龙寺'
                         },
-                        hobby: ['eat', 'drink', { a: 1 }]
+                        hobby: ['eat', 'drink', { a: 1 },[1,1]]
                     }
                 },
-                // template: '<div>hello</div>',
+                // template: `<div></div>`,
                 el: '#app'
             })
+
+            // vm.name = 'coco'
+            // vm.age = 50
+            // vm.age = 30
+            // vm.age = 60
+            vm.hobby[3].push('aaaaaa')
+
+            // vm.$nextTick(() => {
+            //     console.log(app.innerHTML)
+            // })
         </script>
     </body>
 </html>
